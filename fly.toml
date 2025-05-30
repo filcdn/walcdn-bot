@@ -1,0 +1,12 @@
+# fly.toml app configuration file generated for filcdn-indexer on 2025-05-29T10:47:10+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'filcdn-bot'
+primary_region = 'fra'
+
+[build]
+
+[[vm]]
+  size = 'shared-cpu-1x'
