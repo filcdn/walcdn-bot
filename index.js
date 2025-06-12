@@ -157,7 +157,7 @@ async function pickRandomFile(pdpVerifier, { FROM_PROOFSET_ID }) {
     console.log('Converted to CommP CID:', rootCidObj)
     const rootCid = rootCidObj.toString()
 
-    if (IGNORED_ROOTS.includes(`${setId}:${rootCidRaw}`)) {
+    if (IGNORED_ROOTS.includes(`${setId}:${rootCid}`)) {
       console.log(
         'We are ignoring this root, restarting the sampling algorithm',
       )
