@@ -161,6 +161,7 @@ async function pickRandomFile(pdpVerifier, { FROM_PROOFSET_ID }) {
       console.log(
         'We are ignoring this root, restarting the sampling algorithm',
       )
+      continue
     }
 
     return { rootCid, setId, rootId }
