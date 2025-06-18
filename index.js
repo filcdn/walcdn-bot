@@ -16,9 +16,9 @@ import { WALRUS_STATE_OBJECT_ID } from './constants.js'
 
 /**
  * @param {object} args
- * @param {string} args.PROXY_URL
  * @param {string} args.CDN_URL
  * @param {SuiClient} args.suiClient
+ * @param {string} [args.PROXY_URL]
  */
 
 export async function sampleRetrieval({ CDN_URL, PROXY_URL, suiClient }) {

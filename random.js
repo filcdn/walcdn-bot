@@ -14,9 +14,8 @@ export const pickRandomNumber = (min, max) => {
 /**
  * Picks a random item from an array.
  *
- * @template {T}
- * @param {T[]} arr
- * @returns {T}
+ * @param {any[]} arr
+ * @returns {any}
  */
 export const pickRandomItem = (arr) => {
   return arr[pickRandomNumber(0, arr.length - 1)]

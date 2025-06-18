@@ -1,6 +1,6 @@
+import { ProxyAgent } from 'undici'
 import { assertOkResponse } from 'assert-ok-response'
 import { pickRandomNumber } from './random.js'
-import { HttpsProxyAgent } from 'https-proxy-agent'
 
 /**
  * @typedef {{
@@ -74,8 +74,10 @@ const getActiveCertifiedBlobIds = (activeEpoch, blobs) =>
  */
 const fetchBlobs = async (page, proxyUrl) => {
   const apiUrl = `https://walruscan.com/api/walscan-backend/mainnet/api/blobs?page=${page}&sortBy=TIMESTAMP&orderBy=DESC&searchStr=&size=20`
-  const options = proxyUrl ? { agent: new HttpsProxyAgent(proxyUrl) } : {}
+  const options = proxyUrl
+    ? { dispatcher: new ProxyAgent(proxyUrl) }
+    : undefined
   const res = await fetch(apiUrl, options)
   await assertOkResponse(res, 'Failed to retrieve recent blobs')
-  return await res.json()
+  return /** @type {WalrusScanResponse} */ (await res.json())
 }
