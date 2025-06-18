@@ -15,12 +15,12 @@
   "prettier": "@checkernetwork/prettier-config",
   "dependencies": {
     "@mysten/sui": "^1.33.0",
-    "@types/node": "^24.0.3",
     "assert-ok-response": "^1.0.0",
     "undici": "^7.10.0"
   },
   "devDependencies": {
     "@checkernetwork/prettier-config": "^1.0.1",
+    "@types/node": "^24.0.3",
     "neostandard": "^0.12.1",
     "prettier": "^3.5.3"
   }
