@@ -1,15 +1,23 @@
-# fly.toml app configuration file generated for filcdn-indexer on 2025-05-29T10:47:10+02:00
+# fly.toml app configuration file generated for walcdn-bot on 2025-06-18T17:18:15+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'filcdn-bot'
-primary_region = 'fra'
-
-[env]
-  DELAY = 30_000
+app = 'walcdn-bot'
+primary_region = 'cdg'
 
 [build]
+
+[env]
+  DELAY = '30000'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
 
 [[vm]]
   size = 'shared-cpu-1x'
